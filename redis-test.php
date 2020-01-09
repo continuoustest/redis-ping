@@ -2,8 +2,11 @@
 
 $redis = new Redis();
 
+$host  = getenv('REDIS_HOST');
+$port  = getenv('REDIS_PORT');
 //Connecting to Redis
-$redis->connect( getenv('REDIS_HOST') , getenv('REDIS_PORT'));
+echo 'connect to redis : '. $host . ':' . $port; 
+$redis->connect( $host, $port);
 
 if ($redis->ping()) {
         echo "PONG\n";
