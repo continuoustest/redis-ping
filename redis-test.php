@@ -7,7 +7,7 @@ $port  = getenv('REDIS_PORT');
 //Connecting to Redis
 echo 'connect to redis : '. $host . ':' . $port . PHP_EOL; 
 echo "PING" . PHP_EOL;
-$redis->connect( "localhost", "6379");
+$redis->connect( $host, $port);
 
 if ($redis->ping()) {
         echo "PONG" . PHP_EOL;
